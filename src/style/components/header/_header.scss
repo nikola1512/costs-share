@@ -1,0 +1,76 @@
+/*
+ * Header styles
+ *
+ **/
+
+.c-header {
+  @include poly-fluid-sizing('--nu-size-header', $cs-fluid-size-header);
+  background-color: $cs-color-primary;
+}
+
+.c-header__ctn {
+  @include container;
+  display: flex;
+  min-height: 6rem; // fallback
+  min-height: var(--nu-size-header);
+
+  @include media-up($cs-bp-lg) {
+    @include container-h-padding;
+  }
+}
+
+.c-header__left,
+.c-header__menu {
+  flex: 0 0 6rem; // fallback;
+  flex: 0 0 var(--nu-size-header);
+  min-width: 0;
+  display: flex;
+
+  @include media-up($cs-bp-lg) {
+    flex-basis: auto;
+  }
+}
+
+.c-header__menu {
+  justify-content: flex-end;
+}
+
+.c-header__left {
+  display: flex;
+}
+
+.c-header__logo {
+  @include flex-align-center;
+  margin-right: $cs-gutter-2x;
+}
+
+.c-header__logo-icon {
+  width: ptr(50);
+  max-width: 100%;
+  color: $cs-color-text-inverted;
+}
+
+.c-header__main {
+  display: flex;
+  flex: 1 1 0;
+  min-width: 0;
+  padding-left: $cs-gutter;
+  padding-right: $cs-gutter;
+}
+
+.c-header__title {
+  display: flex;
+  align-items: center;
+  flex: 1 1 0;
+  min-width: 0;
+
+  @include hide-up-from($cs-bp-lg);
+}
+
+.c-header__title-text {
+  @include text-ellipsis;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  color: $cs-color-text-inverted;
+}

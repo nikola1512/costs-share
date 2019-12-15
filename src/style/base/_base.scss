@@ -1,0 +1,56 @@
+/**
+ * Base styles
+ *
+ */
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  color: $cs-color-text;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: none;
+}
+
+html,
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  flex: 1 0 auto;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $cs-color-app-bg;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body {
+  line-height: 1.5;
+  background-color: transparent;
+}
+
+button {
+  color: $cs-color-text;
+  cursor: pointer;
+}
+
+a {
+  color: $cs-color-primary;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+svg {
+  fill: currentColor;
+}

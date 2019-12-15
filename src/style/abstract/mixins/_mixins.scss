@@ -1,0 +1,211 @@
+/**
+ * SASS mixins and functions
+ *
+ */
+
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+@function ptr($value) {
+  @return #{$value / strip-units($cs-font-size-root-md)}rem;
+}
+
+@mixin media-up($media) {
+  @media only screen and (min-width: $media) {
+    @content;
+  }
+}
+
+@mixin media-below($media) {
+  @media only screen and (max-width: #{$media - 0.02px}) {
+    @content;
+  }
+}
+
+@mixin media-hover {
+  @media (hover: hover) {
+    @content;
+  }
+}
+
+@mixin media-hover-none {
+  @media (hover: none) {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin autofill() {
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    background-color: transparent;
+    -webkit-box-shadow: 0 0 0 100px $cs-color-input-bg inset !important;
+  }
+}
+
+@mixin input-text-color($color) {
+  -webkit-text-fill-color: $color;
+  color: $color;
+}
+
+@mixin input-placeholder {
+  @include placeholder {
+    color: $cs-color-text-light;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
+@mixin input-clear {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  appearance: none;
+  outline: none;
+}
+
+@mixin text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin absolute-full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+
+@mixin fixed-full {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+@mixin full-size {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin text-hover {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+@mixin button-clear {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+}
+
+@mixin outline-none {
+  &,
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin hidden {
+  pointer-events: none;
+  opacity: 0;
+}
+
+@mixin visible {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+@mixin hide-up-from($breakpoint) {
+  @include media-up($breakpoint) {
+    display: none !important;
+  }
+}
+
+@mixin hide-down-below($breakpoint) {
+  @include media-below($breakpoint) {
+    display: none !important;
+  }
+}
+
+@mixin container {
+  width: $cs-size-main-container;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin container-h-padding {
+  padding-left: $cs-gutter-xl;
+  padding-right: $cs-gutter-xl;
+}
+
+@mixin m-h-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin p-h($padding) {
+  padding-left: $padding;
+  padding-right: $padding;
+}
+
+@mixin p-v($padding) {
+  padding-top: $padding;
+  padding-bottom: $padding;
+}
+
+// Components specific
+@mixin input-padding {
+  @include p-h($cs-gutter);
+}

@@ -1,0 +1,19 @@
+/**
+ * Icons
+ *
+ */
+
+.c-icon {
+  width: $cs-size-icon;
+  height: $cs-size-icon;
+
+  &.c-icon--lg {
+    width: $cs-size-icon-lg;
+    height: $cs-size-icon-lg;
+  }
+
+  &.c-icon--xl {
+    width: $cs-size-icon-xl;
+    height: $cs-size-icon-xl;
+  }
+}

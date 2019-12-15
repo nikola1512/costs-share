@@ -1,0 +1,18 @@
+/*
+ * Header button styles
+ *
+ **/
+
+.c-header-btn {
+  @include button-clear;
+  @include flex-center;
+  flex: 0 0 6rem; // fallback;
+  flex: 0 0 var(--nu-size-header);
+  outline: none;
+  color: $cs-color-text-inverted;
+  transition: background-color $cs-transition-speed;
+
+  &.is-active {
+    background-color: $cs-color-primary-dark;
+  }
+}

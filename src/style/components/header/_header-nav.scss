@@ -1,0 +1,30 @@
+/*
+ * Header desktop navigation styles
+ *
+ **/
+
+.c-header-nav {
+  display: flex;
+  padding-left: $cs-gutter;
+  padding-right: $cs-gutter;
+
+  @include hide-down-below($cs-bp-lg);
+}
+
+.c-header-nav__item {
+  @include flex-align-center;
+  padding: $cs-gutter-sm $cs-gutter-2x;
+  color: $cs-color-text-inverted;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color $cs-transition-speed, color $cs-transition-speed;
+
+  &:hover {
+    color: $cs-color-white-transparent-30;
+  }
+
+  &.is-active {
+    background-color: $cs-color-primary-dark;
+  }
+}

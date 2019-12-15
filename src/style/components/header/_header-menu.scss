@@ -1,0 +1,102 @@
+/*
+ * Header menu styles
+ *
+ **/
+
+.c-header-menu {
+  display: flex;
+  flex-basis: 6rem; // fallback;
+  flex-basis: var(--nu-size-header);
+  justify-content: flex-end;
+  position: relative;
+
+  &.c-header-menu--absolute {
+    .c-header-menu__options {
+      position: absolute;
+      top: 100%;
+      bottom: auto;
+      padding: 0;
+      transform: translate3d(0, -2rem, 0);
+      transition: transform $cs-transition-speed $cs-transition-easing,
+        opacity $cs-transition-speed;
+    }
+
+    .c-header-menu__nav-link {
+      padding: $cs-gutter-sm $cs-gutter;
+      font-size: $cs-font-size-stack;
+      text-transform: none;
+    }
+  }
+
+  &.is-open {
+    .c-header-menu__options {
+      @include visible;
+      transform: translate3d(0, 0, 0);
+      transition: transform $cs-transition-speed $cs-transition-easing,
+        opacity $cs-transition-speed 0s;
+    }
+  }
+}
+
+.c-header-menu__options {
+  @include hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  top: 6rem; // fallback;
+  top: var(--nu-size-header);
+  right: 0;
+  bottom: 0;
+  z-index: $cs-z-index-header-menu-options;
+  padding-top: $cs-gutter;
+  background-color: $cs-color-app-bg;
+  box-shadow: $cs-shadow;
+  overflow: auto;
+  transform: translate3d(100%, 0, 0);
+  transition: transform $cs-transition-speed $cs-transition-easing,
+    opacity $cs-transition-speed #{$cs-transition-speed / 2};
+}
+
+.c-header-menu__nav-item {
+  &.is-active {
+    .c-header-menu__nav-link {
+      color: $cs-color-primary;
+    }
+  }
+
+  &.c-header-menu__nav-item--cta {
+    background-color: $cs-color-primary;
+
+    .c-header-menu__nav-link {
+      color: $cs-color-text-inverted;
+    }
+  }
+}
+
+.c-header-menu__nav-link {
+  @include button-clear;
+  @include text-ellipsis;
+  outline: none;
+  display: block;
+  width: 100%;
+  padding: $cs-gutter;
+  color: $cs-color-text-light;
+  font-size: $cs-font-size-lg;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  transition: color $cs-transition-speed;
+}
+
+.c-header-menu__sub-nav {
+  display: none;
+  background-color: $cs-color-white-dirty;
+
+  &.is-open {
+    display: block;
+  }
+  .c-header-menu__nav-link {
+    font-size: $cs-font-size-stack;
+  }
+}

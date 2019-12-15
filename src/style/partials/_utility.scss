@@ -1,0 +1,16 @@
+/**
+ * Utility styles
+ *
+ */
+
+.u-hide-up-from-lg {
+  @include hide-up-from($cs-bp-lg);
+}
+
+.u-hide-down-below-lg {
+  @include hide-down-below($cs-bp-lg);
+}
+
+.u-text-align-center {
+  text-align: center;
+}

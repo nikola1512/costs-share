@@ -1,0 +1,65 @@
+/**
+ * Typography setup
+ *
+ */
+
+// @font-face rules goes here
+
+$cs-assets-url: '../assets/fonts/';
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('#{$cs-assets-url}Montserrat-Medium.woff2') format('woff2'),
+    url('#{$cs-assets-url}Montserrat-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('#{$cs-assets-url}Montserrat-Regular.woff2') format('woff2'),
+    url('#{$cs-assets-url}Montserrat-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  font-family: $cs-font-stack, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  @include poly-fluid-sizing('font-size', $cs-fluid-size-root-font);
+}
+
+body {
+  font-size: $cs-font-size-stack;
+}
+
+h1,
+.c-h1 {
+  font-size: $cs-font-size-2xl;
+}
+
+h2,
+.c-h2 {
+  font-size: $cs-font-size-xl;
+}
+
+h3,
+.c-h3 {
+  font-size: $cs-font-size-lg;
+}
+
+h4,
+.c-h4 {
+  font-size: $cs-font-size-stack;
+}
+
+input {
+  font-family: $cs-font-stack;
+  font-size: $cs-font-size-stack;
+}
+
+button {
+  font-family: $cs-font-stack;
+}

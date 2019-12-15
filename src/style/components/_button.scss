@@ -1,0 +1,49 @@
+/*
+ * Button styles
+ *
+ **/
+
+.c-btn {
+  @include outline-none;
+  @include button-clear;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: $cs-size-button-height;
+  padding: $cs-gutter-xs $cs-gutter-2x;
+  border-radius: $cs-radius-pill;
+  color: transparent;
+  font-size: $cs-font-size-lg;
+  font-weight: normal;
+  font-family: $cs-font-stack;
+  text-transform: uppercase;
+  user-select: none;
+  transition: all $cs-transition-speed;
+
+  &:hover,
+  &:focus {
+    .c-btn__content {
+      color: $cs-color-primary-dark;
+    }
+  }
+
+  &.c-btn--contain {
+    background-color: currentColor;
+
+    .c-btn__content {
+      color: $cs-color-white;
+    }
+
+    &:hover,
+    &:focus {
+    }
+  }
+
+  &.c-btn--primary {
+    color: $cs-color-primary;
+  }
+}
+
+.c-btn__content {
+  color: $cs-color-primary;
+}

@@ -1,0 +1,98 @@
+/*
+ * Input styles
+ *
+ **/
+
+.c-input {
+  @include flex-column;
+  position: relative;
+  height: $cs-size-input-height;
+}
+
+.c-input__field {
+  @include input-clear;
+  @include autofill;
+  @include absolute-full;
+  @include input-padding;
+  padding-top: $cs-gutter-sm;
+  background-color: $cs-color-input-bg;
+  border-radius: $cs-radius-sm $cs-radius-sm 0 0;
+  caret-color: $cs-color-primary;
+
+  &:focus,
+  &.has-text {
+    ~ .c-input__appearance {
+      .c-input__label-text {
+        transform: translate3d(0, -70%, 0) scale3d(0.6, 0.6, 1);
+      }
+
+      &:after {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  &.has-error {
+    ~ .c-input__appearance {
+      &,
+      .c-input__label-text {
+        color: $cs-color-primary;
+      }
+    }
+  }
+}
+
+.c-input__appearance {
+  @include absolute-full;
+  @include input-padding;
+  @include flex-align-center;
+  pointer-events: none;
+  color: $cs-color-gray-01;
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    height: 5px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+
+  &:before {
+    background-color: $cs-color-gray-02;
+  }
+
+  &:after {
+    background-color: $cs-color-primary;
+    transform: scaleX(0);
+    transition: transform $cs-transition-speed;
+  }
+}
+
+.c-input__label-text {
+  transform-origin: left;
+  transition: transform $cs-transition-speed;
+}
+
+.c-input__required {
+  display: flex;
+  padding: $cs-gutter-sm;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: $cs-color-warning;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.c-input__error {
+  position: absolute;
+  top: 100%;
+  left: $cs-gutter;
+  right: $cs-gutter-xl;
+  padding: $cs-gutter-xs 0;
+  color: $cs-color-warning;
+  font-size: $cs-font-size-xs;
+}

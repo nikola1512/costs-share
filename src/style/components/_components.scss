@@ -1,0 +1,52 @@
+/**
+ * Smaller (single class) components styles
+ *
+ */
+
+.c-public-logo-icon {
+  display: flex;
+  width: ptr(256);
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c-public-header {
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.c-form-group {
+  @include poly-fluid-sizing('margin-bottom', $cs-fluid-size-form-group-mb);
+}
+
+.c-form-heading {
+  margin-bottom: auto;
+  padding-bottom: $cs-gutter;
+}
+
+.c-error {
+  color: $cs-color-primary;
+}
+
+.c-form-info {
+  color: $cs-color-text-lighter;
+  font-size: $cs-font-size-xl;
+  font-weight: 500;
+  text-align: center;
+}
+
+.c-form-optional-link {
+  margin-right: auto;
+  padding: $cs-gutter-sm 0;
+}
+
+.c-link {
+  color: $cs-color-primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

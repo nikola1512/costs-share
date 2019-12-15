@@ -1,0 +1,71 @@
+/**
+ * Layouts
+ *
+ */
+
+// App
+.l-app,
+.l-app__ctn {
+  @include flex-column;
+  flex: 1 0 auto;
+}
+
+.l-app__header {
+  flex-shrink: 0;
+  position: relative;
+  z-index: $cs-z-index-header;
+}
+
+// Public pages
+.l-public,
+.l-public__ctn {
+  @include flex-column;
+  justify-content: center;
+  flex: 1 0 auto;
+}
+
+.l-public__ctn {
+  @include m-h-auto;
+  width: $cs-size-form-container;
+  max-width: 100%;
+  padding: $cs-gutter-2x $cs-gutter-xl;
+}
+
+.l-public__logo,
+.l-public__heading,
+.l-public__main {
+  @include p-v($cs-gutter);
+  @include flex-column;
+  flex: 0 0 auto;
+}
+
+.l-public__logo {
+  @include poly-fluid-sizing('min-height', $cs-fluid-size-public-logo);
+}
+
+.l-public__heading {
+  justify-content: center;
+  min-height: 7rem;
+}
+
+.l-public__main {
+  min-height: 25rem;
+}
+
+// Form
+.l-form,
+.l-form__content {
+  @include flex-column;
+}
+
+.l-form__content {
+  justify-content: flex-end;
+  flex-basis: 20rem;
+}
+
+.l-form__action {
+  @include flex-align-center;
+  flex-wrap: wrap-reverse;
+  justify-content: flex-end;
+  margin-top: 2.5rem;
+}
