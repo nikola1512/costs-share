@@ -3,11 +3,15 @@ import { Switch, Route } from 'react-router-dom';
 import AboutPage from "../About";
 import Homepage from "../Home";
 import NotFoundPage from "../NotFoundPage";
-import { ABOUT_US, HOME } from "../../constants/routes";
+import Products from "../Products";
+import {ABOUT_US, HOME, PRODUCTS} from "../../constants/routes";
 
 export default function Routes() {
   return (
     <Switch>
+      <Route path={PRODUCTS} exact>
+        <Products/>
+      </Route>
       <Route path={ABOUT_US} exact>
         <AboutPage/>
       </Route>
