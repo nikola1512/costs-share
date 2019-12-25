@@ -1,7 +1,7 @@
 import React from 'react';
 import { ReactComponent as Logo } from "../Logo.svg";
 import {Link} from "react-router-dom";
-import {ABOUT_US, HOME} from "../constants/routes";
+import {ABOUT_US, HOME, PRODUCTS} from "../constants/routes";
 
 const AppHeader = () => {
   return (
@@ -15,6 +15,7 @@ const AppHeader = () => {
         <div className="c-header__main">
           <nav className="c-header-nav">
             <Link className="c-header-nav__item" to={ABOUT_US}>About</Link>
+            <Link className="c-header-nav__item" to={PRODUCTS}>Products</Link>
           </nav>
         </div>
       </div>

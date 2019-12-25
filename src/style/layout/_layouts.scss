@@ -52,6 +52,19 @@
   min-height: 25rem;
 }
 
+// Auth pages
+.l-auth,
+.l-auth__ctn {
+  @include flex-column;
+  flex: 1 0 auto;
+}
+
+.l-auth__heading,
+.l-auth__ctn {
+  @include container;
+  @include container-h-padding;
+}
+
 // Form
 .l-form,
 .l-form__content {
